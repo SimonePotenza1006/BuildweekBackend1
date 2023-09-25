@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Epicobox.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="Content/style.css" rel="stylesheet" />
+    <link href="Content/footer.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="sidebar close">
+                <header>
+                    <div class="image-text">
+                        <span class="image">
+                            <img src="../Content/Img/logo.jpeg" alt="logo"> 
+                        </span>
+
+                        <div class="text logo-text">
+                            <span class="name">Gift Xperience</span>
+                            <span class="profession">Goditi il tuo tempo</span>
+                        </div>
+                    </div>
+
+                    <i class='bx bx-chevron-right toggle'></i>
+                </header>
+
+                <div class="menu-bar">
+                    <div class="menu">
+
+                        <li class="search-box">
+                            <i class='bx bx-search icon'></i>
+                            <input type="text" placeholder="Cerca...">
+                        </li>
+
+                        <ul class="menu-links p-0">
+                            <li class="nav-link">
+                                <a href="../Default.aspx">
+                                    <i class='bx bx-home-alt icon'></i>
+                                    <span class="text nav-text">Home</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="../Cart.aspx">
+                                    <i class='bx bx-cart icon'></i>
+                                    <span class="text nav-text">Carrello</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link" id="Admin" runat="server">
+                                <a href="../admin/Admin.aspx">
+                                    <i class='bx bx-lock icon'></i>
+                                    <span class="text nav-text">Admin</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="bottom-content">
+                        <li class="">
+                            <a href="../Login.aspx" runat="server" id="Login" visible="false">
+                                <i class='bx bx-log-in icon'></i>
+                                <span class="text nav-text">Login</span>
+                            </a>
+                            <asp:LinkButton runat="server" id="Logout" visible="false" OnClick="Logout_Click">
+                                <i class='bx bx-log-out icon'></i>
+                                <span class="text nav-text">Logout</span>
+                            </asp:LinkButton>
+                        </li>
+
+                        <li class="mode">
+                            <div class="sun-moon">
+                                <i class='bx bx-moon icon moon'></i>
+                                <i class='bx bx-sun icon sun'></i>
+                            </div>
+                            <span class="mode-text text">Dark mode</span>
+
+                            <div class="toggle-switch">
+                                <span class="switch"></span>
+                            </div>
+                        </li>
+
+                    </div>
+                </div>
+
+            </nav>
+
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+       
+</div>
+    </form>
+
+
+    <script src="../Scripts/script.js"></script>
+</body>
+</html>
